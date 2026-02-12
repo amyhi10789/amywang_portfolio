@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sonya yunshu zhang - links</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://use.typekit.net/jmc4tfq.css">
+</head>
+
+<body style="background-color: #fffaec">
+    <div style="background-color:#ff99c4; height:10px; width:100%;"></div>
+    <div class="navbar">
+        <div>
+            <a href="index.html">home</a>
+            <a href="web_design.html">web projects</a>
+            <a href="resume.html">resume</a>
+        </div>
+
+        <span class="nav-center">- A M Y -</span>
+
+        <div>
+            <a href="hobbies.html" class="split">hobbies</a>
+            <a href="gallery.html" class="split">gallery</a>
+            <a href="contact.html" class="active split">links</a>
+        </div>
+    </div>
+    <div style="background-color:#cecece; height:5px; width:100%;"></div>
+    <div style="background-color:#fcb8d4; height:5px; width:100%;"></div>
+
+    <p style="font-size: 50px; font-weight: bold">special links</p>
+    <p style="font-size: 40px">on this page of the webiste you will find a couple of special links into sonya's life.
+    </p>
+
+    <div style="background-color:#cecece; height:5px; width:100%;"></div>
+    <div style="background-color:#fcb8d4; height:5px; width:100%;"></div>
+
+    <a href="https://www.instagram.com/sonya.zhang08/" class="main-link">
+        la gram de insta esta muy buena y aesthetica
+    </a>
+
+    <div class="secret-block">
+        <p id="secret1" class="secret-text"></p>
+
+        <div class="secret-buttons">
+            <button id="reveal-btn-1">reveal an amazing performance that sonya would love for you to see!!! </button>
+            <button id="hide-btn-1">oh.... i guess you don't really want to support sonya....</button>
+        </div>
+    </div>
+
+    <div class="secret-block">
+        <p id="secret2" class="secret-text"></p>
+
+        <div class="secret-buttons">
+            <button id="reveal-btn-2">reveal the voice of a loving mother to sonya yunshu zhang 🤨😌</button>
+            <button id="hide-btn-2">oop... why ru saying byebye to wittle little baby sonya and her mother's
+                love ! !</button>
+        </div>
+    </div>
+
+    <script>
+        function setupReveal(revealId, hideId, containerId, htmlContent) {
+            const revealBtn = document.getElementById(revealId);
+            const hideBtn = document.getElementById(hideId);
+            const container = document.getElementById(containerId);
+
+            revealBtn.addEventListener("click", () => {
+                container.innerHTML = htmlContent;
+                container.style.display = "block";
+                requestAnimationFrame(() => container.classList.add("show"));
+            });
+
+            hideBtn.addEventListener("click", () => {
+                container.classList.remove("show");
+                setTimeout(() => {
+                    container.style.display = "none";
+                }, 350);
+            });
+        }
+
+        setupReveal(
+            "reveal-btn-1",
+            "hide-btn-1",
+            "secret1",
+            `
+            <a href="https://www.youtube.com/watch?v=P-8ChxkMcGw&t" class="secret-link">
+                if you click this link and go to 42:40 you might find a super cool performance.. 😈😜🤪😊😁
+            </a>
+            `
+        );
+
+        setupReveal(
+            "reveal-btn-2",
+            "hide-btn-2",
+            "secret2",
+            `
+            <a href="https://lunadong.com/" class="secret-link">
+                if you scroll down far enough past all the fancy publications.......
+            </a>
+            `
+        );
+    </script>
+
+</body>
+
+</html>
