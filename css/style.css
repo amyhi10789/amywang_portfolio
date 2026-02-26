@@ -201,11 +201,11 @@ p {
 
 .main-link {
     display: block;
-    padding-left: 42px;
+    padding-left: 22px;
     font-size: 26px;
-    color: #ff99c4;
+    color: #ff58bf;
     text-decoration: none;
-    margin: 10px 0;
+    margin: 30px 0;
 }
 
 .main-link:hover {
@@ -258,4 +258,10 @@ p {
 .secret-buttons button:hover {
     background-color: #ffb7d5;
     transform: translateY(-2px);
+}
+
+.contact-button {
+    background-color: #ffb7d5;
+    margin-left: 20px;
+
 }
