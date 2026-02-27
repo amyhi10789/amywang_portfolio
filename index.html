@@ -28,19 +28,34 @@
         </div>
     </div>
     <div style="background-color:#cecece; height:5px; width:100%;"></div>
-    <div class="image-container center" style="position:relative; display:block; line-height:0; margin:0;">
-        <a href="" style="display:block; line-height:0; margin:0; padding:0;">
-            <img src="" alt="AMY" height="530" style="display:block; margin:0; padding:0;">
+    <div class="post-card">
+        <img src="images/self.jpg" class="post-image">
 
-            <div class="image-text-permanent"></div>
-            <div class="image-text-hover"></div>
-        </a>
+        <div class="post-actions">
+            <button id="likeBtn" class="like-button">♡</button>
+            <span id="likeCount">0</span> likes
+        </div>
     </div>
 
-    <div style="background-color:#fcb8d4; height:5px; width:100%;"></div>
-    <p style="font-size: 50px; text-align: center; font-weight: bold">all about myself</p>
-    <p style="font-size: 40px">who is amy?</p>
-    <p>(text here)</p>
+    <div style="background-color:#fbd6e5; height:200px; width:100%;">
+        <p style="color:#fbd6e5;">secret text</p>
+        <p style="font-size: 40px">welcome to the world of amy wang!</p>
+        <p>Amy Wang is a 10th grader at Eastside Preparatory School. She has achieved many great things in her short 15
+            years of life, especially being an cool and amazing person.</p>
+        <p>In this website, you will discover more about Amy Wang, the most amazing person in the world!</p>
+    </div>
+
+    <script>
+        let count = 0;
+        const btn = document.getElementById("likeBtn");
+        const counter = document.getElementById("likeCount");
+
+        btn.addEventListener("click", () => {
+            count++;
+            counter.textContent = count;
+            btn.textContent = "♥";
+        });
+    </script>
 </body>
 
 </html>

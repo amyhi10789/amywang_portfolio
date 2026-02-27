@@ -39,17 +39,33 @@
     <p style="font-size: 20px">phone: +1 (425)-502-0849</p>
 
     <p style="font-size: 30px; font-weight: bold;">contact form</p>
-
     <p>basic information:</p>
 
-    <input style="margin-left: 20px; width: 300px" type="text" placeholder="name..." required="true">
-    <p></p>
-    <input style="margin-left: 20px; width: 300px" type="email" placeholder="email..." required="true">
-    <p></p>
-    <textarea style="margin-left: 20px; max-width: 300px; max-height: 400px" rows="4" cols="42"
-        placeholder="message..."></textarea>
-    <p></p>
-    <button class="contact-button" style="margin-bottom: 20px;">submit form</button>
+    <form id="contactForm">
+        <input id="nameInput" style="margin-left: 20px; width: 300px" type="text" placeholder="name..." required>
+        <p></p>
+
+        <input id="emailInput" style="margin-left: 20px; width: 300px" type="email" placeholder="email..." required>
+        <p></p>
+
+        <textarea id="messageInput" style="margin-left: 20px; max-width: 300px; max-height: 400px" rows="4" cols="42"
+            placeholder="message..."></textarea>
+        <p></p>
+
+        <button type="submit" class="contact-button" style="margin-bottom: 20px;">
+            submit message
+        </button>
+    </form>
+
+    <script>
+        const form = document.getElementById("contactForm");
+
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            form.reset();
+        });
+    </script>
 
 </body>
 
