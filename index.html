@@ -29,7 +29,7 @@
     </div>
     <div style="background-color:#cecece; height:5px; width:100%;"></div>
     <div class="post-card">
-        <img src="images/self.jpg" class="post-image">
+        <img src="images/self.jpg" class="post-image" alt="image with me mogging">
 
         <div class="post-actions">
             <button id="likeBtn" class="like-button">♡</button>
@@ -46,14 +46,26 @@
     </div>
 
     <script>
-        let count = 0;
         const btn = document.getElementById("likeBtn");
         const counter = document.getElementById("likeCount");
+
+        let count = localStorage.getItem("likeCount")
+            ? parseInt(localStorage.getItem("likeCount"))
+            : 0;
+
+        counter.textContent = count;
+
+        if (localStorage.getItem("liked") === "true") {
+            btn.textContent = "♥";
+        }
 
         btn.addEventListener("click", () => {
             count++;
             counter.textContent = count;
             btn.textContent = "♥";
+
+            localStorage.setItem("likeCount", count);
+            localStorage.setItem("liked", "true");
         });
     </script>
 </body>
