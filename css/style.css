@@ -143,12 +143,14 @@ p {
 }
 
 .post-card {
-    width: 450px;
-    margin: var(--space-xl) auto;
+    width: 460px;
+    margin: 0;
+
     background: white;
-    border-radius: 14px;
-    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
-    padding: 15px;
+    border-radius: 18px;
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.12);
+
+    padding: 16px;
 }
 
 .post-image {
@@ -161,16 +163,63 @@ p {
 }
 
 .like-button {
-    font-size: 24px;
+    font-size: 26px;
     background: none;
     border: none;
     cursor: pointer;
+
     color: #ff4f87;
-    transition: transform 0.1s ease;
+    transition: transform 0.15s ease, color 0.2s ease;
+
+    position: relative;
 }
 
 .like-button:hover {
-    transform: scale(1.2);
+    transform: scale(1.18);
+}
+
+.like-button.liked {
+    color: #ff2e74;
+    transform: scale(1.25);
+}
+
+.like-button.liked {
+    animation: heartPop 0.35s ease;
+}
+
+@keyframes heartPop {
+    0% {
+        transform: scale(1);
+    }
+
+    40% {
+        transform: scale(1.45);
+    }
+
+    100% {
+        transform: scale(1.25);
+    }
+}
+
+.floating-heart {
+    position: fixed;
+    font-size: 16px;
+    color: #ff4f87;
+    pointer-events: none;
+
+    animation: floatHeart 1.2s ease-out forwards;
+}
+
+@keyframes floatHeart {
+    0% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-70px) scale(1.6);
+    }
 }
 
 .gallery-grid {
@@ -371,4 +420,136 @@ p {
     margin-top: 10px;
     font-size: 16px;
     color: #555;
+}
+
+.post-layout {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 32px;
+
+    margin: 60px auto 30px;
+    width: 90%;
+    max-width: 950px;
+}
+
+.comment-card {
+    margin-top: 65px;
+    width: 340px;
+
+    background: linear-gradient(135deg, #fff4f9, #ffe6f0);
+    padding: 26px;
+    border-radius: 22px;
+
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.08);
+
+    top: 100px;
+}
+
+.comment-title {
+    margin-top: 0;
+    font-family: "Optima";
+}
+
+.comments-feed {
+    margin-top: 14px;
+}
+
+.comment {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 15px;
+}
+
+.comment:last-child {
+    border-bottom: none;
+}
+
+.comment b {
+    font-weight: 600;
+}
+
+.comment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.comment-form input,
+.comment-form textarea {
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    font-family: barlow;
+}
+
+@media (max-width: 900px) {
+    .post-layout {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .comment-card {
+        width: 100%;
+        max-width: 460px;
+        position: static;
+    }
+}
+
+.post-actions {
+    margin-top: 12px;
+    font-size: 15px;
+}
+
+.comments-feed {
+    margin-top: 14px;
+    max-height: 240px;
+    overflow-y: auto;
+}
+
+.like-button:active {
+    transform: scale(1.35);
+}
+
+.like-button {
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #ff4f87;
+    transition: transform 0.15s ease;
+}
+
+.like-count-animate {
+    animation: likeBounce 0.35s ease;
+}
+
+@keyframes likeBounce {
+    0% {
+        transform: scale(1);
+    }
+
+    40% {
+        transform: scale(1.35);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.insta-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-bottom: 10px;
+}
+
+.insta-icon {
+    height: 28px;
+}
+
+.insta-user {
+    font-size: 16px;
 }
