@@ -1,6 +1,15 @@
+const express = require("express");
+const path = require("path");
+const http = require("http");
 const WebSocket = require("ws");
 
-const wss = new WebSocket.Server({ port: 3000 });
+const app = express();
+
+app.use(express.static(path.join(__dirname)));
+
+const server = http.createServer(app);
+
+const wss = new WebSocket.Server({ server });
 
 let likeCount = 0;
 let comments = [];
@@ -45,4 +54,8 @@ function broadcast(data) {
     });
 }
 
-console.log("WebSocket running");
+const PORT = process.env.PORT || 3000;
+
+server.listen(PORT, () => {
+    console.log("Server running on port", PORT);
+});
