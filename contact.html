@@ -5,12 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>amy wang - contact</title>
+
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://use.typekit.net/jmc4tfq.css">
 </head>
 
-<body style="background-color: #fffaec">
-    <div style="background-color:#ff99c4; height:10px; width:100%;"></div>
+<body>
+
+    <div class="top-bar"></div>
+
     <div class="navbar">
         <div>
             <a href="index.html">home</a>
@@ -26,46 +29,57 @@
             <a href="contact.html" class="active split">contact</a>
         </div>
     </div>
-    <div style="background-color:#cecece; height:5px; width:100%;"></div>
-    <div style="background-color:#fcb8d4; height:5px; width:100%;"></div>
 
-    <p style="font-size: 30px; font-weight: bold">contact information</p>
-    <p style="font-size: 20px">education email:
-        <a href="mailto:awang28@eastsideprep.com">awang28@eastsideprep.org</a>
-    </p>
-    <p style="font-size: 20px">home email:
-        <a href="mailto:amy.guan.wang@gmail.com">amy.guan.wang@gmail.com</a>
-    </p>
-    <p style="font-size: 20px">phone: +1 (425)-502-0849</p>
+    <div class="divider-gray"></div>
+    <div class="divider-pink"></div>
 
-    <p style="font-size: 30px; font-weight: bold;">contact form</p>
-    <p>basic information:</p>
+    <div class="page-section">
 
-    <form id="contactForm">
-        <input id="nameInput" style="margin-left: 20px; width: 300px" type="text" placeholder="name..." required>
-        <p></p>
+        <p class="page-title">contact</p>
 
-        <input id="emailInput" style="margin-left: 20px; width: 300px" type="email" placeholder="email..." required>
-        <p></p>
+        <div class="contact-wrapper">
 
-        <textarea id="messageInput" style="margin-left: 20px; max-width: 300px; max-height: 400px" rows="4" cols="42"
-            placeholder="message..."></textarea>
-        <p></p>
+            <div class="contact-card">
 
-        <button type="submit" class="contact-button" style="margin-bottom: 20px;">
-            submit message
-        </button>
-    </form>
+                <h3>contact information</h3>
 
-    <script>
-        const form = document.getElementById("contactForm");
+                <p>education email:
+                    <a href="mailto:awang28@eastsideprep.org">awang28@eastsideprep.org</a>
+                </p>
 
-        form.addEventListener("submit", function (event) {
-            event.preventDefault();
+                <p>home email:
+                    <a href="mailto:amy.guan.wang@gmail.com">amy.guan.wang@gmail.com</a>
+                </p>
 
-            form.reset();
-        });
-    </script>
+                <p>phone: +1 (425)-502-0849</p>
+
+            </div>
+
+            <div class="contact-card">
+
+                <h3>contact form</h3>
+
+                <form id="contactForm">
+
+                    <input id="nameInput" type="text" placeholder="name..." required>
+
+                    <input id="emailInput" type="email" placeholder="email..." required>
+
+                    <textarea id="messageInput" rows="4" placeholder="message..."
+                        style="max-width: 353px; max-height: 500px"></textarea>
+
+                    <button type="submit" class="contact-button">submit message</button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script src="contact.js"></script>
 
 </body>
 
