@@ -38,7 +38,9 @@
 
         <div class="post-card">
             <div class="insta-row">
-                <img src="images/insta.png" class="insta-icon">
+                <a href="https://instagram.com/amy_hi_10789" target="_blank" class="insta-link">
+                    <img src="images/insta.png" class="insta-icon">
+                </a>
                 <span class="insta-user"><strong>amy_hi_10789 </strong>⋆‧°𓏲ּ𝄢 isfj-t</span>
             </div>
 
@@ -49,7 +51,7 @@
                 <span id="likeCount">0</span> likes
             </div>
 
-            <p style="font-size: 15px;">Comments</p>
+            <p style="font-size: 15px;">Comments:</p>
 
             <div id="commentsList" class="comments-feed"></div>
 
@@ -81,8 +83,12 @@
         most amazing person in the world!</p>
 
     <script>
+
         const socket = new WebSocket(
-            (location.protocol === "https:" ? "wss://" : "ws://") + location.host
+            (location.protocol === "https:" ? "wss://" : "ws://") +
+            (location.hostname === "localhost"
+                ? "localhost:3000"
+                : location.host)
         );
 
         const btn = document.getElementById("likeBtn");
